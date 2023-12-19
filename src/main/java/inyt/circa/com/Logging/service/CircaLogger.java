@@ -1,13 +1,17 @@
 package inyt.circa.com.Logging.service;
 
 
-import inyt.circa.com.Logging.exception.CircaException;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface CircaLogger {
 
+    /**
+     * Log.
+     *
+     * @param logLevel the log level
+     * @param message  the message
+     */
     public void log(String logLevel, String message);
 
     public void logScreenName(String screenName);

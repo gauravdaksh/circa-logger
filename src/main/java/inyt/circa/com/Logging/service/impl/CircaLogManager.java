@@ -1,30 +1,48 @@
 package inyt.circa.com.Logging.service.impl;
+
 import inyt.circa.com.Logging.service.CircaLogger;
 import inyt.circa.com.Logging.util.LogLevel;
-import org.apache.logging.log4j.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
-
+/**
+ * The type Circa log manager.
+ */
 @Service
 public class CircaLogManager implements CircaLogger {
 
     private Logger logger;
     //private ExtendedLoggerWrapper log;
 
+    /**
+     * Instantiates a new Circa log manager.
+     */
     public CircaLogManager() {
     }
+
+    /**
+     * Instantiates a new Circa log manager.
+     *
+     * @param clazz the clazz
+     */
     public CircaLogManager(Class<?> clazz) {
 
         this.logger = LogManager.getLogger(clazz);
-        /*log = new ExtendedLoggerWrapper((ExtendedLogger) logger,
-                logger.getName(), logger.getMessageFactory());*/
     }
 
-     public static CircaLogger getLogger(Class<?> clazz) {
+    /**
+     * Gets logger.
+     *
+     * @param clazz the clazz
+     * @return the logger
+     */
+    public static CircaLogger getLogger(Class<?> clazz) {
         return new CircaLogManager(clazz);
     }
 
+    @Override
     public void log(String logLevel, String message) {
 
         if(isValid(message) && isValid(logLevel)){
@@ -49,9 +67,9 @@ public class CircaLogManager implements CircaLogger {
         if(logLevel.equalsIgnoreCase(LogLevel.LOG_LEVEL_INFO)){
             logger.info("UUID: {},User: {}, Message: {}",uuid, user, message);
         } else if (logLevel.equals(LogLevel.LOG_LEVEL_DEBUG)) {
-            logger.debug("UUID: {}, Message: {}",uuid, user, message);
+            logger.debug("UUID: {},User: {}, Message: {}",uuid, user, message);
         } else if (logLevel.equals(LogLevel.LOG_LEVEL_WARN)) {
-            logger.warn("UUID: {}, Message: {}",uuid, user, message);
+            logger.warn("UUID: {},User: {}, Message: {}",uuid, user, message);
         }
         ThreadContext.remove("uuid");
     }
