@@ -1,7 +1,7 @@
-package inyt.circa.com.Logging.service.impl;
+package com.inyt.circalog.service.impl;
 
-import inyt.circa.com.Logging.service.CircaLogger;
-import inyt.circa.com.Logging.util.LogLevel;
+import com.inyt.circalog.service.CircaLogger;
+import com.inyt.circalog.util.LogLevel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;

@@ -1,9 +1,9 @@
-package inyt.circa.com.Logging;
+package com.inyt.circalog;
 
 
-import inyt.circa.com.Logging.service.CircaLogger;
-import inyt.circa.com.Logging.service.impl.CircaLogManager;
-import inyt.circa.com.Logging.util.LogLevel;
+import com.inyt.circalog.service.CircaLogger;
+import com.inyt.circalog.service.impl.CircaLogManager;
+import com.inyt.circalog.util.LogLevel;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,7 +13,7 @@ public class LoggingApplication{
 	public static void main(String[] args)  {
 		SpringApplication.run(LoggingApplication.class, args);
 
-		CircaLogger circaLogger = CircaLogManager.getLogger(LoggingApplication.class);
+			CircaLogger circaLogger = CircaLogManager.getLogger(LoggingApplication.class);
         circaLogger.log(LogLevel.LOG_LEVEL_INFO,"Logging Framework12345");
 
 	}

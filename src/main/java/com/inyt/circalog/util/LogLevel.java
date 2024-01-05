@@ -1,4 +1,4 @@
-package inyt.circa.com.Logging.util;
+package com.inyt.circalog.util;
 
 public class LogLevel {
 

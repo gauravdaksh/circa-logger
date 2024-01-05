@@ -1,4 +1,4 @@
-package inyt.circa.com.Logging.service;
+package com.inyt.circalog.service;
 
 
 import org.springframework.stereotype.Service;

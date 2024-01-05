@@ -1,4 +1,4 @@
-package inyt.circa.com.Logging.exception;
+package com.inyt.circalog.exception;
 
 public class CircaException extends Exception{
 

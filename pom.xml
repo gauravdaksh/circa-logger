@@ -8,12 +8,12 @@
 		<version>2.5.6</version>
 		<relativePath/>
 	</parent>
-	<groupId>inyt.circa.com</groupId>
+	<groupId>com.inyt</groupId>
 	<artifactId>circalog</artifactId>
 	<packaging>jar</packaging>
 	<version>0.0.1</version>
 	<name>circalog</name>
-	<description>Demo project for logging in spring boot</description>
+	<description>Circa project for logging</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
